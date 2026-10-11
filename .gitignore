@@ -1,0 +1,19 @@
+# python bytecode (embeds absolute source paths)
+__pycache__/
+*.py[cod]
+
+# runtime lab artifacts (auto-created on run)
+*.log
+*.pid
+tests/test-cert.pem
+
+# live-engagement evidence — confidential, never commit
+# (loopback evidence in tests/out/ IS tracked as verification proof)
+tests/out-live*/
+**/out-live*/
+evidence-live.json
+report-live.md
+*-live.log
+ev.json
+rep.md
+out.json

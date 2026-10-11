@@ -1,0 +1,1259 @@
+{
+  "target": "127.0.0.1",
+  "ip": "127.0.0.1",
+  "started": "2026-10-11T12:15:23",
+  "probes": 3,
+  "delay": 0.5,
+  "catalog": [
+    {
+      "check": "http-seq",
+      "layer": "L7/HTTPS",
+      "target": "https://127.0.0.1/",
+      "records": [
+        {
+          "i": 1,
+          "status": "ERR",
+          "time": 0.001879698999800894,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c541a0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        {
+          "i": 2,
+          "status": "ERR",
+          "time": 0.0019111189999421185,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c68190>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        {
+          "i": 3,
+          "status": "ERR",
+          "time": 0.0009121839998442738,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c68a50>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        }
+      ],
+      "summary": {
+        "status_counts": {
+          "ERR": 3
+        },
+        "first_429": null,
+        "any_retry_after": false,
+        "rate_headers": []
+      },
+      "verdict": "no rate limiting observed (no 429, no Retry-After, no rate headers)"
+    },
+    {
+      "check": "http-seq",
+      "layer": "L7/HTTPS",
+      "target": "http://127.0.0.1:8080/",
+      "records": [
+        {
+          "i": 1,
+          "status": 200,
+          "time": 0.0029373269999268814,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        },
+        {
+          "i": 2,
+          "status": 200,
+          "time": 0.0028861050000159594,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        },
+        {
+          "i": 3,
+          "status": 200,
+          "time": 0.0033773059999475663,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        }
+      ],
+      "summary": {
+        "status_counts": {
+          "200": 3
+        },
+        "first_429": null,
+        "any_retry_after": false,
+        "rate_headers": []
+      },
+      "verdict": "no rate limiting observed (no 429, no Retry-After, no rate headers)"
+    },
+    {
+      "check": "http-seq",
+      "layer": "L7/HTTPS",
+      "target": "https://127.0.0.1:8443/",
+      "records": [
+        {
+          "i": 1,
+          "status": 200,
+          "time": 0.05802306800023871,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        },
+        {
+          "i": 2,
+          "status": 200,
+          "time": 0.05661516700001812,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        },
+        {
+          "i": 3,
+          "status": 200,
+          "time": 0.06401554700005363,
+          "size": 99,
+          "retry_after": null,
+          "ratelimit": {}
+        }
+      ],
+      "summary": {
+        "status_counts": {
+          "200": 3
+        },
+        "first_429": null,
+        "any_retry_after": false,
+        "rate_headers": []
+      },
+      "verdict": "no rate limiting observed (no 429, no Retry-After, no rate headers)"
+    },
+    {
+      "check": "http-parallel",
+      "layer": "L7/HTTPS",
+      "target": "https://127.0.0.1/",
+      "records": [
+        {
+          "i": 2,
+          "status": "ERR",
+          "time": 0.0014324009998745169,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c69450>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        {
+          "i": 3,
+          "status": "ERR",
+          "time": 0.0008141379998960474,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c69310>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        {
+          "i": 1,
+          "status": "ERR",
+          "time": 0.0044204790001458605,
+          "error": "HTTPSConnectionPool(host='127.0.0.1', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8536c68cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        }
+      ],
+      "summary": {
+        "status_counts": {
+          "ERR": 3
+        },
+        "first_429": null,
+        "any_retry_after": false,
+        "rate_headers": []
+      },
+      "verdict": "no rate limiting observed (no 429, no Retry-After, no rate headers)"
+    },
+    {
+      "check": "tcp-connect",
+      "layer": "L4/TCP",
+      "target": "127.0.0.1:8080",
+      "records": [
+        {
+          "i": 1,
+          "status": "OPEN",
+          "time": 0.000562082000215014
+        },
+        {
+          "i": 2,
+          "status": "OPEN",
+          "time": 0.00028670900019278633
+        },
+        {
+          "i": 3,
+          "status": "OPEN",
+          "time": 0.00031362399977297173
+        }
+      ],
+      "summary": {
+        "counts": {
+          "OPEN": 3
+        },
+        "failure_onset": null
+      },
+      "verdict": "no TCP-level restriction (all connects accepted)"
+    },
+    {
+      "check": "tcp-connect",
+      "layer": "L4/TCP",
+      "target": "127.0.0.1:8443",
+      "records": [
+        {
+          "i": 1,
+          "status": "OPEN",
+          "time": 0.00019477299974823836
+        },
+        {
+          "i": 2,
+          "status": "OPEN",
+          "time": 0.0002807010000651644
+        },
+        {
+          "i": 3,
+          "status": "OPEN",
+          "time": 0.000255250000009255
+        }
+      ],
+      "summary": {
+        "counts": {
+          "OPEN": 3
+        },
+        "failure_onset": null
+      },
+      "verdict": "no TCP-level restriction (all connects accepted)"
+    },
+    {
+      "check": "tcp-banner",
+      "layer": "L4/TCP",
+      "target": "127.0.0.1:8080 (unknown)",
+      "records": [
+        {
+          "port": 8080,
+          "service": "unknown",
+          "status": "NO-BANNER",
+          "banner": ""
+        }
+      ],
+      "summary": {
+        "status": "NO-BANNER"
+      },
+      "verdict": "port connected; no server banner within 3s"
+    },
+    {
+      "check": "tcp-banner",
+      "layer": "L4/TCP",
+      "target": "127.0.0.1:8443 (https-alt/tls)",
+      "records": [
+        {
+          "port": 8443,
+          "service": "https-alt/tls",
+          "status": "NO-BANNER",
+          "banner": ""
+        }
+      ],
+      "summary": {
+        "status": "NO-BANNER"
+      },
+      "verdict": "port connected; no server banner within 3s"
+    },
+    {
+      "check": "tls-handshake",
+      "layer": "L4/TLS",
+      "target": "127.0.0.1:8443",
+      "records": [
+        {
+          "i": 1,
+          "status": "HANDSHAKE",
+          "time": 0.0121252750000167,
+          "cert_sha256": "1af089234011d921"
+        },
+        {
+          "i": 2,
+          "status": "HANDSHAKE",
+          "time": 0.017188249999890104,
+          "cert_sha256": "1af089234011d921"
+        },
+        {
+          "i": 3,
+          "status": "HANDSHAKE",
+          "time": 0.012972853999599465,
+          "cert_sha256": "1af089234011d921"
+        }
+      ],
+      "summary": {
+        "counts": {
+          "HANDSHAKE": 3
+        },
+        "failure_onset": null
+      },
+      "verdict": "no TLS-level restriction (all handshakes completed)"
+    },
+    {
+      "check": "icmp",
+      "layer": "L3/ICMP",
+      "target": "127.0.0.1",
+      "records": [
+        {
+          "replies": 3,
+          "rtt_ms": [
+            0.168,
+            0.037,
+            0.038
+          ]
+        }
+      ],
+      "summary": {
+        "loss_line": "3 packets transmitted, 3 received, 0% packet loss, time 2051ms",
+        "replies": 3,
+        "probes": 3
+      },
+      "verdict": "no ICMP rate limiting observed (3/3 replies)"
+    }
+  ],
+  "bypass": [
+    {
+      "url": "http://127.0.0.1:8080/",
+      "bypassed": [],
+      "results": [
+        {
+          "variant": "baseline",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-1",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-2",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-3",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-4",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-5",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-real-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-orig-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-client-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cf-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-head",
+          "method": "HEAD",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-options",
+          "method": "OPTIONS",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "trail-slash",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "query-junk",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "case-path",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dbl-slash",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dot-seg",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-host",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "referer-evil",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "via-evil",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "accept-json",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cookie-junk",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cache-bust",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-mobile",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-curl",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        }
+      ]
+    },
+    {
+      "url": "https://127.0.0.1/",
+      "bypassed": [],
+      "results": [
+        {
+          "variant": "baseline",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-1",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-2",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-3",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-4",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-5",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-real-ip",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-orig-ip",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-client-ip",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cf-ip",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-head",
+          "method": "HEAD",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-options",
+          "method": "OPTIONS",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "trail-slash",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "query-junk",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "case-path",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dbl-slash",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dot-seg",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-host",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "referer-evil",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "via-evil",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "accept-json",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cookie-junk",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cache-bust",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-mobile",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-curl",
+          "method": "GET",
+          "statuses": [
+            "ERR:ConnectionError",
+            "ERR:ConnectionError",
+            "ERR:ConnectionError"
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        }
+      ]
+    },
+    {
+      "url": "https://127.0.0.1:8443/",
+      "bypassed": [],
+      "results": [
+        {
+          "variant": "baseline",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-1",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-2",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-3",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-4",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-5",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-real-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-orig-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "x-client-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cf-ip",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-head",
+          "method": "HEAD",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "method-options",
+          "method": "OPTIONS",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "trail-slash",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "query-junk",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "case-path",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dbl-slash",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "dot-seg",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "xff-host",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "referer-evil",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "via-evil",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "accept-json",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cookie-junk",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "cache-bust",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-mobile",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        },
+        {
+          "variant": "ua-curl",
+          "method": "GET",
+          "statuses": [
+            200,
+            200,
+            200
+          ],
+          "limited": false,
+          "verdict": "NO-LIMITER: baseline not rate limited \u2014 nothing to bypass"
+        }
+      ]
+    }
+  ],
+  "resilience": [
+    {
+      "port": 8080,
+      "check": "slow-read",
+      "held_s": 21.0,
+      "bytes": 0,
+      "verdict": "PATIENT SERVER: held our 1B/s connection 21s (0B) \u2014 slow-read exposure, confirm timeout config"
+    },
+    {
+      "port": 8080,
+      "check": "idle-timeout",
+      "held_s": 18.0,
+      "bytes": 304,
+      "verdict": "PATIENT SERVER: idle keep-alive survived 18s (304B) \u2014 idle slots linger, confirm keep-alive timeout"
+    },
+    {
+      "port": 8080,
+      "check": "conn-ceil",
+      "accepted": 8,
+      "refused": 0,
+      "verdict": "all 8 idle connections accepted \u2014 per-IP ceiling above 8 (raise max-conns only in lab)"
+    },
+    {
+      "port": 8443,
+      "check": "slow-read",
+      "held_s": 21.0,
+      "bytes": 0,
+      "verdict": "PATIENT SERVER: held our 1B/s connection 21s (0B) \u2014 slow-read exposure, confirm timeout config"
+    },
+    {
+      "port": 8443,
+      "check": "idle-timeout",
+      "held_s": 18.1,
+      "bytes": 304,
+      "verdict": "PATIENT SERVER: idle keep-alive survived 18s (304B) \u2014 idle slots linger, confirm keep-alive timeout"
+    },
+    {
+      "port": 8443,
+      "check": "conn-ceil",
+      "accepted": 8,
+      "refused": 0,
+      "verdict": "all 8 idle connections accepted \u2014 per-IP ceiling above 8 (raise max-conns only in lab)"
+    }
+  ],
+  "findings": [
+    {
+      "check": "cors-origin",
+      "acao": "*",
+      "creds": false,
+      "verdict": "CONFIRMED: ACAO '*' \u2014 any site can read responses (anonymous impact; worse with credentials)"
+    },
+    {
+      "check": "wp-users",
+      "verdict": "CONFIRMED: 2 WP users disclosed (['admin', 'editor']) \u2014 feeds password-spray targeting",
+      "data": {
+        "exposed": 2,
+        "sample": [
+          "admin",
+          "editor"
+        ]
+      }
+    },
+    {
+      "check": "wp-version",
+      "verdict": "CONFIRMED version leak: {'generator': '<meta name=\"generator\" content=\"WordPress 6.4.1\" />', 'readme': 'exposed'}",
+      "data": {
+        "generator": "<meta name=\"generator\" content=\"WordPress 6.4.1\" />",
+        "readme": "exposed"
+      }
+    },
+    {
+      "check": "sec-headers",
+      "missing": [
+        "Content-Security-Policy",
+        "X-Frame-Options",
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy"
+      ],
+      "verdict": "CONFIRMED missing: ['Content-Security-Policy', 'X-Frame-Options', 'Strict-Transport-Security', 'X-Content-Type-Options', 'Referrer-Policy']"
+    },
+    {
+      "check": "xmlrpc",
+      "verdict": "CONFIRMED: xmlrpc.php responds (status=200) \u2014 pingback/brute-force surface, recommend disabling if unused",
+      "data": {
+        "status": 200,
+        "exposed": true
+      }
+    },
+    {
+      "check": "dir-listing",
+      "verdict": "CONFIRMED: directory listing on /wp-content/uploads/ \u2014 file disclosure, disable auto-index",
+      "data": {
+        "exposed": true
+      }
+    },
+    {
+      "check": "http-trace",
+      "verdict": "CONFIRMED: TRACE echoes requests (XST surface) \u2014 disable TRACE/TRACK",
+      "data": {
+        "enabled": true
+      }
+    },
+    {
+      "check": "server-banner",
+      "verdict": "CONFIRMED versioned banner: {'Server': 'Apache/2.4.41 , Apache/2.4.41', 'X-Powered-By': 'PHP/7.4.3'} \u2014 aids targeted CVE mapping, strip versions",
+      "data": {
+        "Server": "Apache/2.4.41 , Apache/2.4.41",
+        "X-Powered-By": "PHP/7.4.3"
+      }
+    }
+  ]
+}
